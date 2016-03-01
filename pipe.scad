@@ -2,7 +2,7 @@
 angle =45;  //desired angle
 inside = 25.4;  //inside diameter
 outside = 30;   //outside diameter
-length = 50;   //length, in center
+length = 100;   //length, in center
 split = false;
 
 //code
@@ -23,7 +23,8 @@ scale(1/2)
             rotate([90,2.8,a])
                 cylinder(length+outside,inside,inside);
         if(split)
-            translate([-1.5*length,-1.5*length,-3*length])
-                cube(3*length);
+            rotate([0,0,(180-angle)/2])
+                translate([0,-length,-length])
+                    cube(2*length);
     }
 }
